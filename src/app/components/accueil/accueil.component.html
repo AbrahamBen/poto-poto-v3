@@ -1,0 +1,10 @@
+<p>accueil works!</p>
+<div *ngIf="documents">
+
+  <div *ngFor="let document of documents">
+    <p>{{document.documentName}}</p>
+    <a routerLink="/">Declarer</a>
+    <a routerLink="">Details</a>
+  </div>
+
+</div>
