@@ -1,10 +1,59 @@
-<p>accueil works!</p>
-<div *ngIf="documents">
+<!-- Page Content -->
+<div class="container">
 
-  <div *ngFor="let document of documents">
-    <p>{{document.documentName}}</p>
-    <a routerLink="/">Declarer</a>
-    <a routerLink="">Details</a>
+  <!-- Heading Row -->
+  <div class="row align-items-center my-5">
+    <div class="col-lg-8">
+      <img class="img-fluid rounded mb-4 mb-lg-0" src="assets/images/potopoto/potopoto3.jpg" alt="">
+    </div>
+    <!-- /.col-lg-8 -->
+    <div class="col-lg-4">
+      <h1 class="font-weight-light"> Mairie de Poto-Poto</h1>
+      <p>Bienvenu sur votre plateforme de declaration de documents de naissance en ligne</p>
+      <a class="btn btn-primary" href="#">Se connecter</a>
+    </div>
+    <!-- /.col-md-4 -->
+  </div>
+  <!-- /.row -->
+
+  <!-- Call to Action Well -->
+  <div class="card text-white bg-secondary my-9 py-4 text-center">
+    <div class="card-body">
+      <p class="text-white m-0">
+        Pour obtenir un document sur cette plateforme, vous devez disposer d'un compte de paiement en ligne.<br>
+        En créant votre compte sur cette plateforme, nous vous congigurant un compte de paiement en ligne <a class="btn btn-outline-light" routerLink="">PonaFouta</a>
+      </p>
+    </div>
   </div>
 
+  <!-- Content Row -->
+  <div class="row" *ngIf="documents" fxLayoutAlign="space-between center" class="mt-5 mr-2">
+    <div *ngFor="let document of documents">
+
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{document.documentName}}</mat-card-title>
+          <mat-card-subtitle>{{document.price | currency:'XAF'}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="{{document.imageUrl}}" alt="Photo of a Shiba Inu" height="300">
+        <mat-card-content>
+          <p>
+            {{document.descriptionName}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button routerLink="/document-payement/{{document.id}}">Déclarer</button>
+          <button mat-raised-button routerLink="/document-details/{{document.id}}">SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <!-- /.col-md-4 -->
+
+  </div>
+  <!-- /.row -->
+
 </div>
+<!-- /.container -->
+
+

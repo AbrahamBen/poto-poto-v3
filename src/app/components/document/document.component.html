@@ -1,0 +1,91 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-9 col-sm-12 col-xs-12 mt-5">
+      <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!-- Position Column -->
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef> id. </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef>Document</mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.documentName}}
+          </mat-cell>
+        </ng-container>
+
+        <!-- Description Column -->
+        <ng-container matColumnDef="Description">
+          <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.descriptionName}}
+          </mat-cell>
+        </ng-container>
+
+        <!-- Price Column -->
+        <ng-container matColumnDef="Prix">
+          <mat-header-cell *matHeaderCellDef> Prix</mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.price | currency:'XAF'}}
+          </mat-cell>
+        </ng-container>
+
+        <!-- Image Column -->
+        <ng-container matColumnDef="Image">
+          <mat-header-cell *matHeaderCellDef>Image</mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <img src=" {{element.imageUrl}}" height="100">
+          </mat-cell>
+        </ng-container>
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="actions">
+          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <button mat-flat-button color="warn" class="ml-1"> <mat-icon>delete</mat-icon></button>
+            <button mat-flat-button color="primary" class="ml-2"> Editer</button>
+          </mat-cell>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="symbol">
+          <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+          <button>Bonjour</button>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </div>
+
+    <div class="col-md-3 mt-5">
+      <form class="example-form" [formGroup]="DocForm" (ngSubmit)="onAddDocument()">
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Document</mat-label>
+          <input matInput placeholder="Acte de Naissance" formControlName="documentName">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Description</mat-label>
+          <input matInput placeholder="Documenent de naissance" formControlName="descriptionName">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Prix</mat-label>
+          <input matInput placeholder="2500" formControlName="price">
+        </mat-form-field>
+
+
+
+          <input type="file" formControlName="imageUrl">
+
+
+        <button  mat-flat-button  color="primary" type="submit" class="mt-3"> Ajouter</button>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
+

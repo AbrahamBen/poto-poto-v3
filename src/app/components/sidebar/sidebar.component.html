@@ -13,13 +13,13 @@
        <mat-divider></mat-divider>
        <a mat-list-item>Meres</a>
        <mat-divider></mat-divider>
-       <a mat-list-item>Nationalites</a>
+       <a mat-list-item routerLink="/nationalite" routerLinkActive="primary">Nationalites</a>
        <mat-divider></mat-divider>
        <a mat-list-item>Maires</a>
      </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <span (click)="opened = !opened"><mat-icon>more_vert</mat-icon></span>
+    <span (click)="opened = !opened" class="sp"><mat-icon>menu</mat-icon></span>
   </mat-sidenav-content>
 </mat-sidenav-container>
 

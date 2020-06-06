@@ -1,0 +1,100 @@
+<div class="container mt-3 mb-2
++321?.,mnbvcx-*6543QAZ,., ">
+  <div class="row">
+    <div class="col-md-8 col-sm-8 col-xs-6">
+      <div class="card">
+        <div class="card-header  bg-warning ">
+          <div class="card-title text-white text-center font-weight-bold text-uppercase">Ajouter les informations de la mère</div>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="mereForm" (ngSubmit)="onAddMereInfo()">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Nom(s)</label>
+                  <input class="form-control col-md-12 col-sm-6 col-xs-12" type="text" formControlName="nom">
+                </div>
+
+                <div class="form-group">
+                  <label>Prenom(s)</label>
+                  <input class="form-control col-md-12 col-sm-6 col-xs-12" type="text" formControlName="prenom">
+                </div>
+
+                <div class="form-group">
+                  <label>Date de Naissance</label>
+                  <input class="form-control col-md-12 col-sm-6 col-xs-12" type="date" formControlName="dateNaiss">
+
+                </div>
+
+
+                <div class="form-group">
+                  <label>Lieu de Naissance</label>
+                  <input class="form-control col-md-12 col-sm-6 col-xs-12" type="text" formControlName="lieuNaiss" >
+                </div>
+
+
+
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Domicile</label>
+                  <input class="form-control col-md-12 col-sm-6 col-xs-12" type="text" formControlName="domicile">
+                </div>
+
+                <div class="form-group">
+
+                  <label>Nationalité</label>
+
+                  <select class="form-control col-md-12 col-sm-6 col-xs-12" formControlName="nationalite" >
+                    <option>Congolaise</option>
+                  </select>
+
+
+                </div>
+
+
+                <div class="form-group">
+                  <label>Niveau d'instruction</label>
+
+                  <select class="form-control col-md-12 col-sm-6 col-xs-12" formControlName="niveauInstruction">
+                    <option value="Supérieur">Supérieur</option>
+                    <option value="Secondaire">Secondaire</option>
+                    <option value="Primaire">Primaire</option>
+                    <option value="Aucun">Aucun</option>
+                  </select>
+                </div>
+
+
+                <div class="form-group">
+                  <label>Profession</label>
+                  <select class="form-control col-md-12 col-sm-6 col-xs-12" formControlName="profession">
+                    <option value="Informaticien(e)">Informaticien(e)</option>
+                    <option value="Couturier(e)">Couturier(e)</option>
+                    <option value="Charpentier">Charpentier</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-success" type="submit">Ajouter</button>
+          </form>
+        </div>
+        <div class="card-footer">
+          <div class="card-text text-center  text-uppercase font-weight-bold text-danger">
+            Une fois les informations Ajoutées, vous ne pourrez plus les modifier!
+            C'est bourquoi il est impératif de bien vérifier vos informations avant de les valider.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 col-sm-4 col-xs-6">
+      <h2>Infos</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, magni, aperiam vitae illum voluptatum aut sequi impedit non velit ab ea pariatur sint quidem corporis eveniet. Odit, temporibus reprehenderit dolorum!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis?</p>
+
+    </div>
+  </div>
+</div>
+
+

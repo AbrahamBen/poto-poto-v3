@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 mt-5">
+      <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+          <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef> Nom de la nationalité </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.nationaliteName}}
+          </mat-cell>
+
+        </ng-container>
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="actions">
+          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <button mat-flat-button color="warn" class="ml-5"> <mat-icon>delete</mat-icon></button>
+            <button mat-flat-button color="primary" class="ml-5"> Editer</button>
+          </mat-cell>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="symbol">
+          <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+          <button>Bonjour</button>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </div>
+
+    <div class="col-md-4 mt-5">
+      <form class="example-form" [formGroup]="NatForm" (ngSubmit)="onAddNationalite()">
+
+
+        <table class="example-full-width" cellspacing="0"><tr>
+          <td><mat-form-field class="example-full-width">
+            <mat-label>Nom de la nationalité</mat-label>
+            <input matInput formControlName="nationaliteName" type="text">
+          </mat-form-field></td>
+          <button  mat-flat-button  color="primary" type="submit"> Ajouter</button>
+        </tr></table>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
+

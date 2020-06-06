@@ -7,9 +7,9 @@
       </button>
 
       <div *ngIf="!devicesXs">
-        <button mat-button>Accueil</button>
+        <button mat-button routerLink="/accueil">Accueil</button>
         <button mat-button routerLink="/contact" routerLinkActive="">Contacter nous</button>
-        <button mat-button>Apropos de nous</button>
+        <button mat-button routerLink="/about">Apropos de nous</button>
       </div>
 
     </div>
@@ -22,8 +22,8 @@
   </mat-toolbar-row>
 
   <mat-toolbar-row *ngIf="devicesXs" fxLayoutAlign="space-between end">
-    <button mat-button>Accueil</button>
-    <button mat-button>Contacter nous</button>
-    <button mat-button>Apropos de nous</button>
+    <button mat-button routerLink="/accueil">Accueil</button>
+    <button mat-button routerLink="/contact" >Contacter nous</button>
+    <button mat-button routerLink="/about">Apropos de nous</button>
   </mat-toolbar-row>
 </mat-toolbar>

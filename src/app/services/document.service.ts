@@ -18,6 +18,11 @@ export class DocumentService {
     );
   }
 
+  public getRessourceById(id):Observable<Document>{
+    const documentDetailUrl = `${this.host}/documents/${id}`;
+    return this.httpClient.get<Document>(documentDetailUrl);
+  }
+
   public deleteResources(url):Observable<Document>{
     return this.httpClient.delete<Document>(url);
   }
