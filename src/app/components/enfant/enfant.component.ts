@@ -5,6 +5,7 @@ import {FormBuilder, Validators} from "@angular/forms";
 import {MereService} from "../../services/mere.service";
 import {Router} from "@angular/router";
 import {EnfantService} from "../../services/enfant.service";
+import {PereService} from "../../services/pere.service";
 
 @Component({
   selector: 'app-enfant',
@@ -19,6 +20,8 @@ export class EnfantComponent implements OnInit {
     dateNaiss: ['',Validators.required],
     lieuNaiss: ['',Validators.required],
     heureNaiss: ['',Validators.required],
+    pere: ['',Validators.required],
+    mere: ['',Validators.required],
     situationMatriParent: ['',Validators.required],
     nationalite: ['',],
     dateDeclaration: ['',Validators.required],
