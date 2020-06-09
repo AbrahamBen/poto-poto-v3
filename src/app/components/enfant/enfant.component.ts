@@ -13,7 +13,8 @@ import {PereService} from "../../services/pere.service";
   styleUrls: ['./enfant.component.css']
 })
 export class EnfantComponent implements OnInit {
-  public pere = new Pere();
+  public peres:Pere[]=[];
+  public meres:Mere[]=[];
   public EnfantForm = this.fb.group({
     nom: ['',Validators.required],
     prenom: ['',Validators.required],
@@ -28,9 +29,17 @@ export class EnfantComponent implements OnInit {
     dateDeclaration: ['',Validators.required],
   });
 
-  constructor(private fb:FormBuilder,private enfantService:EnfantService,private router:Router) { }
+  constructor(
+    private fb:FormBuilder,
+    private enfantService:EnfantService,
+    private router:Router,
+    private pereService: PereService,
+    private mereService: MereService
+    ) { }
 
   ngOnInit(): void {
+    this.loadMere();
+    this.loadPere();
   }
 
   public onAddChild() {
@@ -39,8 +48,27 @@ export class EnfantComponent implements OnInit {
         //this.router.navigateByUrl('/enfant');
         alert('Bravo');
         this.EnfantForm.value.pere
-        console.log(this.pere.id)
         this.EnfantForm.value
+      },error => {
+        console.log(error);
+      }
+    )
+  }
+
+  public loadPere(){
+    this.pereService.getRessources().subscribe(
+      data=>{
+        this.peres = data;
+      },error => {
+        console.log(error);
+      }
+    )
+  }
+
+  public loadMere(){
+    this.mereService.getRessources().subscribe(
+      data=>{
+        this.meres = data;
       },error => {
         console.log(error);
       }
