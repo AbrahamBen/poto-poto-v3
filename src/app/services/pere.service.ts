@@ -19,6 +19,11 @@ export class PereService {
     );
   }
 
+  public getRessourceById(id):Observable<Pere>{
+    const PereDetailUrl = `${this.host}/peres/${id}`;
+    return this.httpClient.get<Pere>(PereDetailUrl);
+  }
+
   public saveRessources(url,data):Observable<Pere>{
     return this.httpClient.post<Pere>(url,data);
   }

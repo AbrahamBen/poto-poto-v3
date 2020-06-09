@@ -4,6 +4,7 @@ import {Nationalite} from "../models/nationalite";
 import {Observable} from "rxjs";
 import {map} from "rxjs/operators";
 import {HttpClient} from "@angular/common/http";
+import {Pere} from "../models/pere";
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,11 @@ export class NationaliteService {
     return this.httpClient.get<GetResponseNationalites>(this.host+'/nationalites').pipe(
       map(response=>response._embedded.nationalites)
     );
+  }
+
+  public getRessourceById(id):Observable<Nationalite>{
+    const nationaliteDetailUrl = `${this.host}/nationalites/${id}`;
+    return this.httpClient.get<Nationalite>(nationaliteDetailUrl);
   }
 
   public getNationalitesByKeyword(mc:any):Observable<Nationalite>{

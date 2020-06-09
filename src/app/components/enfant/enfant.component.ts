@@ -13,6 +13,7 @@ import {PereService} from "../../services/pere.service";
   styleUrls: ['./enfant.component.css']
 })
 export class EnfantComponent implements OnInit {
+  public pere = new Pere();
   public EnfantForm = this.fb.group({
     nom: ['',Validators.required],
     prenom: ['',Validators.required],
@@ -37,6 +38,8 @@ export class EnfantComponent implements OnInit {
       response=>{
         //this.router.navigateByUrl('/enfant');
         alert('Bravo');
+        this.EnfantForm.value.pere
+        console.log(this.pere.id)
         this.EnfantForm.value
       },error => {
         console.log(error);

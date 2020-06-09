@@ -45,8 +45,8 @@
 
                   <label>Nationalité</label>
 
-                  <select class="form-control col-md-12 col-sm-6 col-xs-12" formControlName="nationalite" >
-                    <option>Congolaise</option>
+                  <select class="form-control col-md-12 col-sm-6 col-xs-12" formControlName="nationalite" id="nationalite" >
+                    <option *ngFor="let nat of nationalites" [ngValue]="nat._links.self.href">{{nat.nationaliteName}}</option>
                   </select>
 
 
