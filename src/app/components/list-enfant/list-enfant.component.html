@@ -1,0 +1,98 @@
+<div class="container mt-3">
+
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> ID</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+    </ng-container>
+
+    <!-- Nom Column -->
+    <ng-container matColumnDef="nom">
+      <mat-header-cell *matHeaderCellDef> NOM </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.nom}}
+      </mat-cell>
+    </ng-container>
+
+    <!-- Prenom Column -->
+    <ng-container matColumnDef="prenom">
+      <mat-header-cell *matHeaderCellDef> PRENOM </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.prenom}}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="sexe">
+      <mat-header-cell *matHeaderCellDef> PRENOM </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.prenom}}
+      </mat-cell>
+    </ng-container>
+
+    <!-- DN Column -->
+    <ng-container matColumnDef="dateNaiss">
+      <mat-header-cell *matHeaderCellDef> DATE DE NAISSANCE </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.dateNaiss}}
+      </mat-cell>
+    </ng-container>
+
+    <!-- LN Column -->
+
+    <ng-container matColumnDef="lieuxNaiss">
+      <mat-header-cell *matHeaderCellDef> LIEU DE NAISSANCE </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.lieuNaiss}}
+      </mat-cell>
+    </ng-container>
+
+    <!-- Nationalite Column -->
+
+    <ng-container matColumnDef="heureNaiss">
+      <mat-header-cell *matHeaderCellDef> HEURE </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.heureNaiss}}
+      </mat-cell>
+    </ng-container>
+    <!-- Domicile Column -->
+
+    <ng-container matColumnDef="situationMatriParent">
+      <mat-header-cell *matHeaderCellDef> SITUATION MATRIMONIALE DES PARENTS </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.situationMatriParent}}
+      </mat-cell>
+    </ng-container>
+    <!-- Profession Column -->
+
+    <ng-container matColumnDef="pere">
+      <mat-header-cell *matHeaderCellDef>PERE </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.pere}}
+      </mat-cell>
+    </ng-container>
+
+    <!-- Niveau d'instruction Column -->
+    <ng-container matColumnDef="mere">
+      <mat-header-cell *matHeaderCellDef> MERE</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.mere}}
+      </mat-cell>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <button mat-flat-button color="warn" class="ml-5"> <mat-icon>delete</mat-icon></button>
+        <button mat-flat-button color="primary" class="ml-5"> Editer</button>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="symbol">
+      <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+      <button>Bonjour</button>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
+
+
+
+
+
+

@@ -30,6 +30,12 @@ import { MereComponent } from './components/mere/mere.component';
 import { EnfantComponent } from './components/enfant/enfant.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
+import { ListPereComponent } from './components/list-pere/list-pere.component';
+import { ListMereComponent } from './components/list-mere/list-mere.component';
+import { ListEnfantComponent } from './components/list-enfant/list-enfant.component';
+import { AdminTaskComponent } from './components/admin-task/admin-task.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { ListDocumentComponent } from './components/list-document/list-document.component';
 
 
 
@@ -48,6 +54,12 @@ import { AboutComponent } from './components/about/about.component';
     EnfantComponent,
     ContactComponent,
     AboutComponent,
+    ListPereComponent,
+    ListMereComponent,
+    ListEnfantComponent,
+    AdminTaskComponent,
+    PageNotFoundComponent,
+    ListDocumentComponent,
 
 
 

@@ -52,14 +52,14 @@
                 <div class="form-group">
                   <label>Père ID</label>
                   <select class="form-control col-md-12 col-sm-6 col-xs-12" formControlName="pere">
-                    <option *ngFor="let pere of peres" [ngValue]="pere._links.self.href">{{pere.nom}} || {{pere.prenom}}</option>
+                    <option *ngFor="let pere of peres" [ngValue]="pere._links.self.href">{{pere.nom}} - {{pere.prenom}}</option>
                   </select>
                 </div>
 
                 <div class="form-group">
                   <label>Mère ID</label>
                   <select class="form-control col-md-12 col-sm-6 col-xs-12" formControlName="mere">
-                    <option *ngFor="let mere of meres" [ngValue]="mere._links.self.href">{{mere.nom}} || {{mere.prenom}}</option>
+                    <option *ngFor="let mere of meres" [ngValue]="mere._links.self.href">{{mere.nom}} - {{mere.prenom}}</option>
                   </select>
                 </div>
 

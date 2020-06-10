@@ -15,7 +15,7 @@ export class EnfantService {
   constructor(private httpClient:HttpClient) { }
 
   public getRessources():Observable<Enfant[]>{
-    return this.httpClient.get<GetResponseEnfant>(this.host+'/enfant').pipe(
+    return this.httpClient.get<GetResponseEnfant>(this.host+'/enfants').pipe(
       map(response=>response._embedded.enfants)
     );
   }
