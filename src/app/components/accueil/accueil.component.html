@@ -43,7 +43,8 @@
           </p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-raised-button routerLink="/document-payement/{{document.id}}">Déclarer</button>
+          <button mat-raised-button (click)="onDeclare(document.id)">Déclarer</button>
+          <!--<button mat-raised-button routerLink="/document-payement/{{document.id}}">Declarer</button>-->
           <button mat-raised-button routerLink="/document-details/{{document.id}}">SHARE</button>
         </mat-card-actions>
       </mat-card>

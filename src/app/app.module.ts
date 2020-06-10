@@ -19,6 +19,8 @@ import {MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 import { AccueilComponent } from './components/accueil/accueil.component';
 import {HttpClientModule} from "@angular/common/http";
@@ -36,6 +38,7 @@ import { ListEnfantComponent } from './components/list-enfant/list-enfant.compon
 import { AdminTaskComponent } from './components/admin-task/admin-task.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ListDocumentComponent } from './components/list-document/list-document.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 
@@ -60,6 +63,7 @@ import { ListDocumentComponent } from './components/list-document/list-document.
     AdminTaskComponent,
     PageNotFoundComponent,
     ListDocumentComponent,
+    NavbarComponent,
 
 
 
@@ -81,6 +85,8 @@ import { ListDocumentComponent } from './components/list-document/list-document.
     MatInputModule,
     MatProgressBarModule,
     MatDialogModule,
+    MatSnackBarModule,
+   // MatSnackBarConfig,
    // NgxMatFileInputModule,
     HttpClientModule,
     AppRoutingModule,
@@ -88,6 +94,7 @@ import { ListDocumentComponent } from './components/list-document/list-document.
 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[PaymentComponent]
 })
 export class AppModule { }

@@ -4,6 +4,7 @@ import {MereService} from "../../services/mere.service";
 import {Route, Router} from "@angular/router";
 import {Nationalite} from "../../models/nationalite";
 import {NationaliteService} from "../../services/nationalite.service";
+import {NotificationService} from "../../services/notification.service";
 
 @Component({
   selector: 'app-mere',
@@ -27,7 +28,8 @@ export class MereComponent implements OnInit {
     private fb:FormBuilder,
     private mereService:MereService,
     private router:Router,
-    private nationaliteService:NationaliteService
+    private nationaliteService:NationaliteService,
+    private notificationService:NotificationService
     ) { }
 
   ngOnInit(): void {
@@ -37,7 +39,9 @@ export class MereComponent implements OnInit {
   public onAddMereInfo() {
     this.mereService.saveRessources(this.mereService.host+'/meres',this.mereForm.value).subscribe(
       response=>{
+
         this.router.navigateByUrl('/enfant');
+        this.notificationService.openSnackBar('Informations de la mère ajoutées avec succès');
         console.log(this.mereForm.value);
       },error => {
         console.log(error);

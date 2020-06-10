@@ -4,6 +4,7 @@ import {PereService} from "../../services/pere.service";
 import {Router} from "@angular/router";
 import {NationaliteService} from "../../services/nationalite.service";
 import {Nationalite} from "../../models/nationalite";
+import {NotificationService} from "../../services/notification.service";
 
 @Component({
   selector: 'app-pere',
@@ -23,7 +24,13 @@ export class PereComponent implements OnInit {
   });
   public nationalites:Nationalite[]=[];
 
-  constructor(private fb:FormBuilder,private pereService:PereService,private router:Router,private  nationaliteService:NationaliteService) { }
+  constructor(
+    private fb:FormBuilder,
+    private pereService:PereService,
+    private router:Router,
+    private nationaliteService:NationaliteService,
+    private notificationService:NotificationService
+    ) { }
 
   ngOnInit(): void {
     this.getNat();
@@ -32,6 +39,7 @@ export class PereComponent implements OnInit {
  public onAddPereInfo() {
     this.pereService.saveRessources(this.pereService.host+'/peres',this.pereForm.value).subscribe(
       response=>{
+        this.notificationService.openSnackBar('Informations du père ajoutées avec succès');
         this.router.navigateByUrl('/mere');
        // this.getPereById();
         console.log(this.pereForm.value);
@@ -52,4 +60,5 @@ export class PereComponent implements OnInit {
       }
     )
   }
+
 }

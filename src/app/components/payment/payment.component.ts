@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {DocumentService} from "../../services/document.service";
 import {Document} from "../../models/document";
+import {FormBuilder, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-payment',
@@ -11,11 +12,16 @@ import {Document} from "../../models/document";
 export class PaymentComponent implements OnInit {
   public documents:Document = new Document();
   public solde = 1000;
+  public payForm = this.fb.group({
+    documentName: ['',Validators.required],
+    price: ['',Validators.required],
+  });
 
   constructor(
     private _actevetedRoute: ActivatedRoute,
     private router:Router,
-    private documentService:DocumentService
+    private documentService:DocumentService,
+    private fb:FormBuilder
     ) { }
 
   ngOnInit(): void {

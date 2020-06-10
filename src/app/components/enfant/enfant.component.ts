@@ -6,6 +6,8 @@ import {MereService} from "../../services/mere.service";
 import {Router} from "@angular/router";
 import {EnfantService} from "../../services/enfant.service";
 import {PereService} from "../../services/pere.service";
+import {NotificationService} from "../../services/notification.service";
+import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-enfant',
@@ -29,12 +31,16 @@ export class EnfantComponent implements OnInit {
     dateDeclaration: ['',Validators.required],
   });
 
+
+
   constructor(
     private fb:FormBuilder,
     private enfantService:EnfantService,
     private router:Router,
     private pereService: PereService,
-    private mereService: MereService
+    private mereService: MereService,
+    private notificationService:NotificationService,
+    private _snackBar: MatSnackBar
     ) { }
 
   ngOnInit(): void {
@@ -45,8 +51,9 @@ export class EnfantComponent implements OnInit {
   public onAddChild() {
     this.enfantService.saveRessources(this.enfantService.host+'/enfants',this.EnfantForm.value).subscribe(
       response=>{
-        //this.router.navigateByUrl('/enfant');
-        alert('Bravo');
+      // this.notificationService.success('Votre demande de déclaration est terminée avec succès');
+        this.router.navigateByUrl('/accueil');
+         this.notificationService.openSnackBar('Votre demande de déclaration est terminée avec succès');
         this.EnfantForm.value.pere
         this.EnfantForm.value
       },error => {
@@ -74,4 +81,5 @@ export class EnfantComponent implements OnInit {
       }
     )
   }
+
 }
